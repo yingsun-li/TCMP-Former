@@ -1,31 +1,39 @@
-# TCMP-Former: evaluation and figure code
+# TCMP-Former
 
-Preparation copy for partial code release. This package contains OOF metric calculation, patient-paired bootstrap analysis of interictal comparisons, and plotting from prepared summaries. It does not contain model implementation, training, weights, or prediction data. It does not reproduce model training.
+**A Framework Combining Temporal Context and Morphological Patch Representations for Seizure-Onset Pattern Recognition in Intracranial EEG**
 
-## Setup
+TCMP-Former (Temporal Context–Morphology Patch Transformer) is a framework for detecting and classifying seizure-onset patterns (SOPs) in intracranial EEG. It combines fine-grained waveform morphology, local statistical scale, continuous waveform structure, and temporal context to characterize seizure-onset activity.
 
-Use Python 3.10 or newer. From this package directory:
+## Method overview
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/binary_metrics.py --help
-python scripts/patient_bootstrap.py --help
-python scripts/render_figures.py --help
-```
+- **Morphology-factorized patch encoding (MFPE)** represents local waveform shape together with mean- and RMS-based statistical conditioning.
+- **Temporal CNN encoding** captures neighboring continuous waveform structure.
+- **CNN-guided local cross-attention** fuses morphological representations with continuous-structure features.
+- **Temporal-context modeling** relates preceding activity to the current signal representation for SOP recognition.
 
-## Run with your inputs
+## Study scope
 
-```bash
-python scripts/binary_metrics.py
-python scripts/patient_bootstrap.py
-python scripts/render_figures.py
-python scripts/render_figures.py --final
-```
+The study investigates:
 
-Defaults are resolved from the package directory, regardless of the current working directory. All tools accept explicit input and output arguments. Relative command-line paths resolve from the caller's working directory. Outputs stay under `outputs/` by default. Figure previews are written before final exports.
+- Binary SOP recognition and eight-class morphological classification.
+- Comparisons with baseline methods and component ablation analyses.
+- Onset-aligned model responses, seizure-level onset timing, and matched interictal comparisons.
+- Target-center adaptation through training from scratch, fine-tuning, and joint training.
 
-See `data/README.md` for input layout. No real data are bundled in this preparation copy. The interictal comparison uses 10,000 patient-paired bootstrap resamples and percentile 95% confidence intervals. Its input consists of paired patient-level positive decision-output proportions. Plot labels retain historical figure identifiers and should be checked against final manuscript numbering before upload.
+## Data
 
-Plotting reads frozen summaries and does not recompute model predictions or statistical intervals. Binary metrics use saved class predictions and SOP probabilities. The bootstrap resamples both conditions together and estimates equally weighted patient means. It does not calculate classification-metric intervals.
+The study uses the public HUP iEEG Epilepsy Dataset and a non-public clinical cohort from Xuanwu Hospital.
 
-Binary metrics read saved predictions for the background reference condition. Input schema and condition names are defined in `data/README.md`.
+- **Public HUP dataset:** available through [OpenNeuro, ds004100](https://openneuro.org/datasets/ds004100).
+- **Xuanwu Hospital cohort:** not publicly available because of patient privacy restrictions. Access requests may be directed to the corresponding authors and are subject to institutional approval.
+
+## Code availability
+
+**Full implementation and reproduction instructions: coming soon.**
+
+This repository currently contains selected evaluation and visualization utilities. Additional components will be added in subsequent updates:
+
+- Model implementation and configuration.
+- Data preparation and training workflows.
+- Evaluation and analysis scripts.
+- Installation, usage, and reproduction instructions.
