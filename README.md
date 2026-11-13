@@ -30,10 +30,3 @@ The study uses the public HUP iEEG Epilepsy Dataset and a non-public clinical co
 ## Code availability
 
 **Full implementation and reproduction instructions: coming soon.**
-
-This repository currently contains selected evaluation and visualization utilities. Additional components will be added in subsequent updates:
-
-- Model implementation and configuration.
-- Data preparation and training workflows.
-- Evaluation and analysis scripts.
-- Installation, usage, and reproduction instructions.
