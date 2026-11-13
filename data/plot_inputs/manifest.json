@@ -1,0 +1,31 @@
+{
+  "inputs": {
+    "binary_roc.csv": {
+      "sha256": "be08fdeef267af57fed0e6e68249ad0544083ae7343c2eaecebbafd9c930d2bc"
+    },
+    "binary_pr.csv": {
+      "sha256": "3a0f47212d894b1e45b4daf74e944f059530c2961c1dbeeb1baf10fa5f9e29b5"
+    },
+    "binary_summary.json": {
+      "sha256": "732040dc7e5d2f4b831c436e4e2d4c76e99ffde57dfcadc7c1fa0fb1d827b2b0"
+    },
+    "timing_bundle.json": {
+      "sha256": "43bea91c5025928bb22f3215a29574074bad5c25d3c379fed758ae1e13162e96"
+    },
+    "typing_per_class.csv": {
+      "sha256": "cd77b33cb0a4072181f68e9a9371afa03638583f858d48db5ec33f2bfa496dc6"
+    },
+    "typing_folds.csv": {
+      "sha256": "f4f5c665055ffc94c3315f138b871d89a9b61983c76b2c1aa4b07d13840b5098"
+    },
+    "typing_plot_constants.json": {
+      "sha256": "dfa98a243e57122b0f1775afafd184fd717f3f2ca7cd3f1bfdcbeadc21f69636"
+    },
+    "typing_confusion_counts.csv": {
+      "sha256": "a8d06a99967ccba22d66257683246896c7ab641caa93b89e56bc8817883e3098"
+    },
+    "interictal_summary.csv": {
+      "sha256": "cbf9c707b4defd564f8e03baa7e3e2bc30e14fc34bf1da80af5d35cb2bd09072"
+    }
+  }
+}
